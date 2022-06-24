@@ -10,6 +10,7 @@ public:
     wstring getName() {
         return name;
     }
+    void setName(wstring nname);
 private:
     wstring name;
 
@@ -27,10 +28,15 @@ Dog::~Dog()
     wcout<<L"Destroying "<<this->getName()<<endl;
 }
 
+void Dog::setName(wstring nname) {
+    this->name = nname;
+}
 int main(int ac, char *av[]) {
     Dog Murphy;
     Dog mouse(L"Mouse Dog");
     wcout<<Murphy.getName()<<endl;
+    Murphy.setName(L"Murphy Dog");
+    wcout<<"Murphy newname = "<<Murphy.getName()<<endl;
     wcout<<mouse.getName()<<endl;
     cout<<"Hello, World"<<endl;
 }
