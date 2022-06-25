@@ -7,6 +7,7 @@ public:
     Dog();
     ~Dog();
     Dog(wstring nname);
+    Dog(wstring nname, int nage);
     wstring getName() {
         return name;
     }
@@ -34,6 +35,11 @@ Dog::Dog()
     name = L"Unknown";
     age = 0;
 }
+Dog::Dog(wstring nname, int nage) {
+    name = nname;
+    age = nage;
+    wcout<<L"Constructing dog with name "<<name<<L" and age "<<nage<<"."<<endl;
+}
 
 Dog::~Dog()
 {
@@ -50,6 +56,7 @@ int main(int ac, char *av[]) {
     Dog Murphy;
     Dog mouse(L"Mouse Dog");
     Dog* spot = new Dog(L"Spot");
+    Dog cork(L"Cork", 22);
     wcout<<"Spot name is "<<spot->getName()<<endl;
     wcout<<spot->getName()<<endl;
     wcout<<Murphy.getName()<<endl;
@@ -61,6 +68,7 @@ int main(int ac, char *av[]) {
     Murphy - 3;
     wcout<<"M age = "<<Murphy.getAge()<<endl;
     wcout<<mouse.getName()<<endl;
+    wcout<<L"Dog name "<<cork.getName()<<L" and age "<<cork.getAge()<<L"."<<endl;
     cout<<"Hello, World"<<endl;
     delete spot;
 }
