@@ -29,6 +29,10 @@ public:
         age = age + 1;
         wcout<<"Unary incrementing age for "<<name<<"."<<endl;
     }
+    Dog& operator+=(int n) {
+        this->age += n;
+        return *this;
+    }
     int getAge();
 private:
     wstring name;
@@ -78,6 +82,8 @@ int main(int ac, char *av[]) {
     Murphy = Murphy + 22;
     wcout<<"M age = "<<Murphy.getAge()<<endl;
     Murphy = Murphy - 3;
+    wcout<<"M age = "<<Murphy.getAge()<<endl;
+    Murphy += 1000;
     wcout<<"M age = "<<Murphy.getAge()<<endl;
     wcout<<mouse.getName()<<endl;
     wcout<<L"Dog name "<<cork.getName()<<L" and age "<<cork.getAge()<<L"."<<endl;
