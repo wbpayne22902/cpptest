@@ -5,6 +5,7 @@
 /*.obj
 /*.s
 /*.asm
+/*.out
 cpptest.ilk
 vc140.pdb
 cpptest.pdb
