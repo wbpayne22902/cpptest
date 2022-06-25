@@ -13,10 +13,6 @@ public:
         return name;
     }
     void setName(wstring nname);
-    /*void operator+(int n) {
-        age = age + n;
-        cout<<"Incrementing age by "<<n<<"."<<endl;
-    }*/
     Dog operator+(int n) {
         Dog tdog ;
         tdog.name = this->name;
@@ -59,7 +55,7 @@ Dog::Dog(wstring nname, int nage) {
 
 Dog::~Dog()
 {
-    wcout<<L"Destroying "<<this->getName()<<endl;
+   // wcout<<L"Destroying "<<this->getName()<<endl;
 }
 
 void Dog::setName(wstring nname) {
