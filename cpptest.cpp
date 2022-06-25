@@ -34,9 +34,14 @@ void Dog::setName(wstring nname) {
 int main(int ac, char *av[]) {
     Dog Murphy;
     Dog mouse(L"Mouse Dog");
+    Dog* spot = new Dog(L"Spot");
+    wcout<<"Spot name is "<<spot->getName()<<endl;
+    delete spot;
+    wcout<<spot->getName()<<endl;
     wcout<<Murphy.getName()<<endl;
     Murphy.setName(L"Murphy Dog");
     wcout<<"Murphy newname = "<<Murphy.getName()<<endl;
     wcout<<mouse.getName()<<endl;
     cout<<"Hello, World"<<endl;
 }
+
