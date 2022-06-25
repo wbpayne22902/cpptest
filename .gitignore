@@ -3,7 +3,8 @@
 /cpptest.dSYM
 /*.exe
 /*.obj
-
+/*.s
+/*.asm
 cpptest.ilk
 vc140.pdb
 cpptest.pdb
