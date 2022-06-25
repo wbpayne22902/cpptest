@@ -14,11 +14,15 @@ public:
     void setName(wstring nname);
     void operator+(int n) {
         age = age + n;
-        cout<<"Incrementing age!"<<endl;
+        cout<<"Incrementing age by "<<n<<"."<<endl;
     }
     void operator-(int n) {
         age = age - n;
         cout<<"Decrementing age by "<<n<<"."<<endl;
+    }
+    void operator++(int n) {
+        age = age + 1;
+        wcout<<"Unary indrementing age for "<<name<<"."<<endl;
     }
     int getAge();
 private:
@@ -68,6 +72,8 @@ int main(int ac, char *av[]) {
     Murphy - 3;
     wcout<<"M age = "<<Murphy.getAge()<<endl;
     wcout<<mouse.getName()<<endl;
+    wcout<<L"Dog name "<<cork.getName()<<L" and age "<<cork.getAge()<<L"."<<endl;
+    cork++;
     wcout<<L"Dog name "<<cork.getName()<<L" and age "<<cork.getAge()<<L"."<<endl;
     cout<<"Hello, World"<<endl;
     delete spot;
