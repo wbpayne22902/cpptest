@@ -6,29 +6,37 @@ class Dog
 public:
     Dog();
     ~Dog();
+    Dog(int a);
     Dog(wstring nname);
     Dog(wstring nname, int nage);
     wstring getName() {
         return name;
     }
     void setName(wstring nname);
-    void operator+(int n) {
+    /*void operator+(int n) {
         age = age + n;
         cout<<"Incrementing age by "<<n<<"."<<endl;
+    }*/
+    Dog operator+(int n) {
+        Dog tdog ;
+        tdog.name = this->name;
+        tdog.age = this->age + n;
+        return tdog;
     }
-    void operator-(int n) {
-        age = age - n;
-        cout<<"Decrementing age by "<<n<<"."<<endl;
+    Dog operator-(int n) {
+        Dog tmp;
+        tmp.name = this->name;
+        tmp.age = this->age - n;
+        return tmp;
     }
     void operator++(int n) {
         age = age + 1;
-        wcout<<"Unary indrementing age for "<<name<<"."<<endl;
+        wcout<<"Unary incrementing age for "<<name<<"."<<endl;
     }
     int getAge();
 private:
     wstring name;
     int age;
-
 };
 Dog::Dog(wstring nname) {
     this->name = nname;
@@ -38,6 +46,10 @@ Dog::Dog()
 {
     name = L"Unknown";
     age = 0;
+}
+Dog::Dog(int a) {
+    name = L"Unknown";
+    age = a;
 }
 Dog::Dog(wstring nname, int nage) {
     name = nname;
@@ -57,7 +69,7 @@ int Dog::getAge() {
     return this->age;
 }
 int main(int ac, char *av[]) {
-    Dog Murphy;
+    Dog Murphy(10);
     Dog mouse(L"Mouse Dog");
     Dog* spot = new Dog(L"Spot");
     Dog cork(L"Cork", 22);
@@ -67,9 +79,9 @@ int main(int ac, char *av[]) {
     Murphy.setName(L"Murphy Dog");
     wcout<<"Murphy newname = "<<Murphy.getName()<<endl;
     wcout<<"M age = "<<Murphy.getAge()<<endl;
-    Murphy + 1;
+    Murphy = Murphy + 22;
     wcout<<"M age = "<<Murphy.getAge()<<endl;
-    Murphy - 3;
+    Murphy = Murphy - 3;
     wcout<<"M age = "<<Murphy.getAge()<<endl;
     wcout<<mouse.getName()<<endl;
     wcout<<L"Dog name "<<cork.getName()<<L" and age "<<cork.getAge()<<L"."<<endl;
