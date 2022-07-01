@@ -1,6 +1,8 @@
+/* Simple class test app */
 #include <iostream>
 #include <string>
 using namespace std;
+/*Start of Dog class */
 class Dog
 {
 public:
