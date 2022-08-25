@@ -1,4 +1,5 @@
 /* Simple class test app */
+/* This is simple and I wrote it in C++ */
 #include <iostream>
 #include <string>
 using namespace std;
